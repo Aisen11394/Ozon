@@ -1,60 +1,31 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
- 
-local Window = Library.CreateLib("Ozon script roblox", "DarkTheme")
- 
- 
---Plr tabs (done)
-local PlrTab = Window:NewTab("Go to hell ozon")
-local PlrSection = PlrTab:NewSection("Main")
 
-Section:NewTextBox("Get money", "get money (enter value)", function(money)
-	local args = {
-    [1] = "Cash",
-    [2] = money
-}
+local Window = Library.CreateLib("Ozon script", "RJTheme3")
 
-game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
-end)
+local Tab = Window:NewTab("Im hate ozon WB better")
 
-Section:NewTextBox("Get reputation", "Get reputation (enter value)", function(reputation)
-	local args = {
-    [1] = "\208\160\208\181\208\191\209\131\209\130\208\176\209\134\208\184\209\143",
-    [2] = reputation
-}
+local Section = Tab:NewSection("Main")
 
-game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
-end)
+Section:NewLabel("LabelText")
 
-PlrSection:NewButton("Delete you buyer", "Delete you buyer", function()
-    game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
-end)
-
-PlrSection:NewButton("Add you buyer", "Add you buyer", function()
+Section:NewButton("Add npc", "Add npc to you", function()
     game:GetService("ReplicatedStorage").Events.NPCEvents.CreateNPC:FireServer()
 end)
- 
-PlrSection:NewToggle("All boxes are issued", "all boxes are can getting or provided", function(state)
+
+-- Переключатель
+Section:NewToggle("ToggleText", "ToggleInfo", function(state)
     if state then
-        while wait() do
-        game:GetService("ReplicatedStorage").Events.CreateBoxEvent:FireServer()
-        end
+        print("Toggle On")
     else
-        break
+        print("Toggle Off")
     end
 end)
- 
-PlrSection:NewSlider("Speed", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
- 
-PlrSection:NewSlider("Jump Power", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-end)
- 
--- Others
-local OthersTab = Window:NewTab("Others")
-local OthersSection = OthersTab:NewSection("Scripts")
- 
-OthersSection:NewButton("Infinite yield", "Get Infinite yield", function()
-    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
+
+Section:NewTextBox("TextboxText", "TextboxInfo", function(mon)
+	local args = {
+    [1] = "Cash",
+    [2] = mon
+}
+
+game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
 end)
