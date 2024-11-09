@@ -6,7 +6,25 @@ local Window = Library.CreateLib("Ozon script roblox", "DarkTheme")
 --Plr tabs (done)
 local PlrTab = Window:NewTab("Go to hell ozon😈")
 local PlrSection = PlrTab:NewSection("Main")
- 
+
+	Section:NewTextBox("Get money", "get money (enter value)", function(money)
+	local args = {
+    [1] = "Cash",
+    [2] = money
+}
+
+game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
+end)
+
+Section:NewTextBox("Get reputation", "Get reputation (enter value)", function(reputation)
+	local args = {
+    [1] = "\208\160\208\181\208\191\209\131\209\130\208\176\209\134\208\184\209\143",
+    [2] = reputation
+}
+
+game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
+end)
+
 PlrSection:NewButton("Delete you buyer", "Delete you buyer", function()
     game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
 end)
