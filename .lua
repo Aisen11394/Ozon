@@ -1,13 +1,13 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/refs/heads/main/source.lua"))()
  
 local Window = Library.CreateLib("Ozon script roblox", "DarkTheme")
  
  
 --Plr tabs (done)
-local PlrTab = Window:NewTab("Go to hell ozon😈")
+local PlrTab = Window:NewTab("Go to hell ozon")
 local PlrSection = PlrTab:NewSection("Main")
 
-	Section:NewTextBox("Get money", "get money (enter value)", function(money)
+Section:NewTextBox("Get money", "get money (enter value)", function(money)
 	local args = {
     [1] = "Cash",
     [2] = money
