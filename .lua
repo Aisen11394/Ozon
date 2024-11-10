@@ -16,13 +16,13 @@ Section:NewButton("delete npc", "delete npc from you", function()
     game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
 end)
 
-PlrSection:NewButton("All boxes giveable", "All boxes giveable for npc", function()
+Section:NewButton("All boxes giveable", "All boxes giveable for npc", function()
     while wait() do
     game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
     end
 end)
 
-Section:NewTextBox("TextboxText", "TextboxInfo", function(mon)
+Section:NewTextBox("Give money", "Get money (enter value)", function(mon)
 	local args = {
     [1] = "Cash",
     [2] = mon
