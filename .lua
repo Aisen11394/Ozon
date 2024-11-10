@@ -7,7 +7,7 @@ local Tab = Window:NewTab("Main")
 
 local Section = Tab:NewSection("Im hate ozon WB better")
 
-Section:NewLabel("Make by a weirdman2112")
+Section:NewLabel("OzonBAD")
 
 Section:NewButton("Add npc", "Add npc to you", function()
     game:GetService("ReplicatedStorage").Events.NPCEvents.CreateNPC:FireServer()
