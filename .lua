@@ -34,3 +34,12 @@ Section:NewTextBox("TextboxText", "TextboxInfo", function(mon)
 
 game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
 end)
+
+Section:NewTextBox("Get reputation", "Get for you reputation", function(rep)
+	local args = {
+    [1] = "\208\160\208\181\208\191\209\131\209\130\208\176\209\134\208\184\209\143",
+    [2] = rep
+}
+
+game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
+end)
