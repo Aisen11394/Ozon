@@ -29,6 +29,15 @@ Section:NewTextBox("Give money", "Get money (enter value)", function(mon)
 game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
 end)
 
+Section:NewTextBox("Change your orders, "Change your orders (enter value)", function(ord)
+	local args = {
+    [1] = "\208\151\208\176\208\186\208\176\208\183\209\139",
+    [2] = ord
+}
+
+game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
+end)
+
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScreenGui"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
