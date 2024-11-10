@@ -16,14 +16,8 @@ Section:NewButton("delete npc", "delete npc from you", function()
     game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
 end)
 
-Section:NewToggle("All boxes is giveable", "Make all boxes giveable", function(state)
-    if state then
-        while wait() do
-	game:GetService("ReplicatedStorage").Events.CreateBoxEvent:FireServer()
-	end
-    else
-        break
-    end
+PlrSection:NewButton("All boxes giveable", "All boxes giveable for npc", function()
+    game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
 end)
 
 Section:NewTextBox("TextboxText", "TextboxInfo", function(mon)
