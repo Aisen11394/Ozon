@@ -16,7 +16,7 @@ Section:NewButton("delete npc", "delete npc from you", function()
     game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
 end)
 
-Section:NewToggle("ToggleText", "ToggleInfo", function(state)
+Section:NewToggle("All boxes is giveable", "Make all boxes giveable", function(state)
     if state then
         while wait() do
 	game:GetService("ReplicatedStorage").Events.CreateBoxEvent:FireServer()
@@ -30,24 +30,6 @@ Section:NewTextBox("TextboxText", "TextboxInfo", function(mon)
 	local args = {
     [1] = "Cash",
     [2] = mon
-}
-
-game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
-end)
-
-Section:NewTextBox("Get you orders", "Get for you orders", function(ord)
-	local args = {
-    [1] = "\208\151\208\176\208\186\208\176\208\183\209\139",
-    [2] = ord
-}
-
-game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
-end)
-
-Section:NewTextBox("Change you wallpaper", "Change you Wallpaper in pc (with rbxassetid)", function(wal)
-	local args = {
-    [1] = "CurrentWallpaper",
-    [2] = wal
 }
 
 game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
