@@ -16,10 +16,8 @@ Section:NewButton("delete npc", "delete npc from you", function()
     game:GetService("ReplicatedStorage").Events.NPCEvents.DeleteNPC:FireServer()
 end)
 
-Section:NewButton("All boxes giveable", "All boxes giveable for npc", function()
-while wait() do
+Section:NewButton("boxes giveable", "boxes giveable for npc", function()
 game:GetService("ReplicatedStorage").Events.CreateBoxEvent:FireServer()
-end
 end)
 
 Section:NewTextBox("Give money", "Get money (enter value)", function(mon)
