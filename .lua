@@ -35,10 +35,19 @@ Section:NewTextBox("TextboxText", "TextboxInfo", function(mon)
 game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
 end)
 
-Section:NewTextBox("Get reputation", "Get for you reputation", function(rep)
+Section:NewTextBox("Get you orders", "Get for you orders", function(ord)
 	local args = {
-    [1] = "\208\160\208\181\208\191\209\131\209\130\208\176\209\134\208\184\209\143",
-    [2] = rep
+    [1] = "\208\151\208\176\208\186\208\176\208\183\209\139",
+    [2] = ord
+}
+
+game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
+end)
+
+Section:NewTextBox("Change you wallpaper", "Change you Wallpaper in pc (with rbxassetid)", function(wal)
+	local args = {
+    [1] = "CurrentWallpaper",
+    [2] = wal
 }
 
 game:GetService("ReplicatedStorage").Events.DataManage:FireServer(unpack(args))
